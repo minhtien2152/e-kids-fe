@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import Background from "../components/Background";
 import GreetingHeader from "../components/GreetingHeader";
 import Category from "../components/Category";
+import Progress from "../components/Progress";
 import {
   StyleSheet,
   View,
@@ -21,40 +22,48 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.content}>
           <Text style={styles.text}>Gợi ý cho ngày hôm nay</Text>
           <Category>
-            <Image style={styles.img} source={require("../assets/car.png")} />
-
+            <Progress percent={0.4}>
+              <Image style={styles.img} source={require("../assets/car.png")} />
+            </Progress>
             <Text style={styles.text2}>Phương tiện</Text>
           </Category>
           <Text style={styles.text}>Tiếp tục các bài học của bạn</Text>
           <ScrollView showsHorizontalScrollIndicator>
             <Category>
-              <Image
-                style={styles.img}
-                source={require("../assets/fork.png")}
-              />
-
+              <Progress percent={0.2}>
+                <Image
+                  style={styles.img}
+                  source={require("../assets/fork.png")}
+                />
+              </Progress>
               <Text style={styles.text2}>Vật dụng nhà bếp</Text>
             </Category>
             <Category>
-              <Image
-                style={styles.img}
-                source={require("../assets/bird.png")}
-              />
-
+              <Progress percent={0.5}>
+                <Image
+                  style={styles.img}
+                  source={require("../assets/bird.png")}
+                />
+              </Progress>
               <Text style={styles.text2}>Các loại chim</Text>
             </Category>
             <Category>
-              <Image style={styles.img} source={require("../assets/car.png")} />
-
+              <Progress percent={0.8}>
+                <Image
+                  style={styles.img}
+                  source={require("../assets/car.png")}
+                />
+              </Progress>
               <Text style={styles.text2}>Phương tiện</Text>
             </Category>
             <Category>
-              <Image
-                style={styles.img}
-                source={require("../assets/lion.png")}
-              />
-
-              <Text style={styles.text2}>Vật dụng trong nhà</Text>
+              <Progress>
+                <Image
+                  style={styles.img}
+                  source={require("../assets/lion.png")}
+                />
+              </Progress>
+              <Text style={styles.text2}>Động vật</Text>
             </Category>
           </ScrollView>
         </View>
@@ -106,9 +115,7 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
     fontFamily: "Helvetica",
-    marginLeft: 90,
-    textAlign: "left",
-    textAlignVertical: "center",
+    marginLeft: 16,
   },
   cat: {
     position: "relative",
@@ -117,12 +124,12 @@ const styles = StyleSheet.create({
   },
   img: {
     position: "absolute",
-    left: 20,
-
+    left: 15,
+    top: 15,
     width: 50,
     height: 50,
 
-    borderRadius: 10,
+    borderRadius: 100,
     backgroundColor: colorPallette[Math.floor(Math.random() * 10)].toString(),
   },
 });

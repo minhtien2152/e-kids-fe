@@ -11,8 +11,12 @@ export default function Category({ type, children, color, press }) {
       width: "100%",
       height: 100,
       alignSelf: "center",
+      overflow: "hidden",
       marginBottom: 18,
-      justifyContent: "center",
+      paddingHorizontal: 16,
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
     },
     second: {
       width: "100%",
